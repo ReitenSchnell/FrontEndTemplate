@@ -14,7 +14,7 @@
 
     var config = {
         appErrorPrefix: '[client Error] ',
-        appTitle: 'client'
+        appTitle: 'Client'
     };
 
     core.value('config', config);
