@@ -1,0 +1,26 @@
+<section class="mainbar">
+    <section class="matter">
+        <div class="container">
+            <div class="col-md-6">
+                <form class="form-horizontal">
+                    <div class="page-header">
+                        <h2>Вход в систему</h2>
+                    </div>
+                    <fieldset>
+                        <div class="form-group">
+                            <label for="userid">Имя пользователя:</label>
+                            <input required="" id="userid" name="userid" type="text" class="form-control" ng-model="vm.credentials.login">
+                        </div>
+                        <div class="form-group">
+                            <label for="passwordinput">Пароль:</label>
+                            <input required="" id="passwordinput" name="passwordinput" class="form-control" type="password" ng-model="vm.credentials.password" >
+                        </div>
+                        <div class="form-group">
+                            <button id="signin" name="signin" class="btn btn-success" ng-click="vm.login()">Войти в систему</button>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </section>
+</section>
