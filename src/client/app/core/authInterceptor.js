@@ -16,7 +16,7 @@
                 return response || $q.when(response);
             },
             responseError: function(rejection) {
-                if (rejection.status === 401) {
+                if (rejection.status === 401 || rejection.status === 0) {
                     console.log('Response Error 401', rejection);
                     $location.path('/login');
                 }

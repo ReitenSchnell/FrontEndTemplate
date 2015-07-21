@@ -4,19 +4,19 @@
             <div class="col-md-6">
                 <form class="form-horizontal">
                     <div class="page-header">
-                        <h2>Вход в систему</h2>
+                        <h2>Welcome</h2>
                     </div>
                     <fieldset>
                         <div class="form-group">
-                            <label for="userid">Имя пользователя:</label>
+                            <label class="control-label" for="userid">Login</label>
                             <input required="" id="userid" name="userid" type="text" class="form-control" ng-model="vm.credentials.login">
                         </div>
                         <div class="form-group">
-                            <label for="passwordinput">Пароль:</label>
+                            <label class="control-label" for="passwordinput">Password</label>
                             <input required="" id="passwordinput" name="passwordinput" class="form-control" type="password" ng-model="vm.credentials.password" >
                         </div>
                         <div class="form-group">
-                            <button id="signin" name="signin" class="btn btn-success" ng-click="vm.login()">Войти в систему</button>
+                            <button id="signin" name="signin" class="btn btn-success" ng-click="vm.signin()">Sign in</button>
                         </div>
                     </fieldset>
                 </form>

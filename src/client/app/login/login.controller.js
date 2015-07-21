@@ -8,7 +8,8 @@
     LoginController.$inject = ['$q', '$location', '$cookieStore', 'authservice', 'headerService'];
     function LoginController($q, $location, $cookieStore, authservice, headerService) {
         var vm = this;
-        vm.login = login;
+        vm.signin = signin;
+        vm.signup = signup;
 
         var success = function (data) {
             var token = data[0].data.token;
@@ -22,8 +23,12 @@
 
         };
 
-        function login() {
+        function signin() {
             $q.all([authservice.signin(vm.credentials)]).then(success);
+        }
+
+        function signup() {
+//            $q.all([authservice.signin(vm.credentials)]).then(success);
         }
     }
 })();
