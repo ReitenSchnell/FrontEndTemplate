@@ -18,12 +18,12 @@
         return service;
 
         function signin(credentials) {
-            var data = $http.post(dataUrl + 'signin', credentials);
+            var data = $http.post(dataUrl + 'authorization/signin', credentials);
             return $q.when(data);
         }
 
         function signup(registrationInfo) {
-            var data = $http.post(dataUrl + 'signup', registrationInfo);
+            var data = $http.post(dataUrl + 'authorization/signup', registrationInfo);
             return $q.when(data);
         }
     }

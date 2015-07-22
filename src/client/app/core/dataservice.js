@@ -15,7 +15,7 @@
         return service;
 
         function getMessageCount() {
-            var data = $http.get(apiUrl + 'messages');
+            var data = $http.get(apiUrl + 'test');
             return $q.when(data);
         }
     }
