@@ -19,8 +19,10 @@
         };
 
         /* @ngInject */
-        function TopNavController() {
+        TopNavController.$inject = ['headerService'];
+        function TopNavController(headerService) {
             var vm = this;
+            vm.isLoggedIn = headerService.isLoggedIn();
         }
 
         return directive;

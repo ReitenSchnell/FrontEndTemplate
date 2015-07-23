@@ -11,6 +11,9 @@
         return {
             init : function(token) {
                 $http.defaults.headers.common['X-Access-Token'] = token || $cookies.token;
+            },
+            isLoggedIn : function(){
+                return $cookies.token !== undefined;
             }
         };
     }
