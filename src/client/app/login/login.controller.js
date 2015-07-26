@@ -9,6 +9,7 @@
     function LoginController($q, $location, $cookieStore, authservice, headerService, $rootScope) {
         var vm = this;
         vm.signin = signin;
+        vm.error = null;
 
         var success = function (data) {
             var token = data[0].data.token;
@@ -17,11 +18,17 @@
                 $cookieStore.put('token', token);
                 $location.path('/');
                 $rootScope.$broadcast('userLoggedIn');
+                vm.error = null;
             }
         };
 
+        var error = function (data)
+        {
+            vm.error = data.statusText;
+        };
+
         function signin() {
-            $q.all([authservice.signin(vm.credentials)]).then(success);
+            $q.all([authservice.signin(vm.credentials)]).then(success, error);
         }
     }
 })();
