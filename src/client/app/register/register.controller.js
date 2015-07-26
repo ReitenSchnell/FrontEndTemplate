@@ -5,8 +5,8 @@
         .module('app.register')
         .controller('RegistrationController', RegistrationController);
 
-    RegistrationController.$inject = ['$q', '$location', '$cookieStore', 'authservice', 'headerService'];
-    function RegistrationController($q, $location, $cookieStore, authservice, headerService) {
+    RegistrationController.$inject = ['$q', '$location', '$cookieStore', 'authservice', 'headerService', '$rootScope'];
+    function RegistrationController($q, $location, $cookieStore, authservice, headerService, $rootScope) {
         var vm = this;
         vm.signup = signup;
 
@@ -16,6 +16,7 @@
                 headerService.init(token);
                 $cookieStore.put('token', token);
                 $location.path('/');
+                $rootScope.$broadcast('userLoggedIn');
             }
         };
 

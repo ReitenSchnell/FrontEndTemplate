@@ -5,8 +5,8 @@
         .module('app.login')
         .controller('LoginController', LoginController);
 
-    LoginController.$inject = ['$q', '$location', '$cookieStore', 'authservice', 'headerService'];
-    function LoginController($q, $location, $cookieStore, authservice, headerService) {
+    LoginController.$inject = ['$q', '$location', '$cookieStore', 'authservice', 'headerService', '$rootScope'];
+    function LoginController($q, $location, $cookieStore, authservice, headerService, $rootScope) {
         var vm = this;
         vm.signin = signin;
 
@@ -16,6 +16,7 @@
                 headerService.init(token);
                 $cookieStore.put('token', token);
                 $location.path('/');
+                $rootScope.$broadcast('userLoggedIn');
             }
         };
 

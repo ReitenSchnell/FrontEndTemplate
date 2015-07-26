@@ -8,6 +8,6 @@
         </a>
     </div>
     <div class="pull-right">
-        <a href="/" class="navbar-brand"><span class="brand-title">Sign out {{vm.isLoggedIn}}</span></a>
+        <a href="/" class="navbar-brand" ng-click="vm.signout()" ng-show="vm.isLoggedIn"><span class="brand-title">Sign out {{$rootScope.isLoggedIn}}</span></a>
     </div>
 </nav>
